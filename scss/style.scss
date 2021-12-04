@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "./variables";
+@import "./mixin";
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    .header{
+        @include flex(center,space-between);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 2rem;
+        .nav{
+            .nav-links{
+                display: none;
+            }
+        }
+    }
+    .home {
+        height: 100vh;
+        width: auto;
+        background: url('../images/mobile/image-header.jpg') no-repeat center/cover;
+        padding: 1rem;
+        color: $c-white;
+        text-transform: uppercase;
+        font-family: $font-fraunces;
+        @include flex();
+        .content {
+            .title{
+                text-align: center;
+                font-size: $font-l;
+                font-weight: $weight-h;
+                letter-spacing: 5px;
+                margin-bottom: 2rem;
+            }
+            .arrow-down-container{
+                text-align: center;
+            }
+        }
+    }
+    .about-us{
+        @include content($primary-y);
+    }
+    .services{
+        @include content($primary);
+    }
+    .s-graphic{
+        .bg-content{
+            .background{
+                background: url('../images/mobile/image-graphic-design.jpg') no-repeat center/cover;
+                @include flex();
+                height: 120vh;
+                align-items: flex-end;
+                @include bgContentText($graphic-text);
+            }
+        }
+    }
+    .s-photograph{
+        .bg-content{
+            .background{
+                background: url('../images/mobile/image-photography.jpg') no-repeat center/cover;
+                @include flex();
+                height: 120vh;
+                align-items: flex-end;
+                @include bgContentText($photo-text);
+            }
+        }
+    }
+    .testimonial{
+        background-color: $c-white;
+        .container{
+            margin: 4rem 2rem 0 2rem;
+            .title {
+                text-align: center;
+                margin-bottom: 4rem;
+                font-family: $font-fraunces;
+                text-transform: uppercase;
+                font-weight: $weight-h;
+                color: $gray-blue;
+                letter-spacing: 2.5px;
+                font-size: $font-s;
+            }
+            .component-container{
+                .client-component{
+                    margin-bottom: 4rem;
+                    padding: 0 .8rem;
+                    .client-photo-container{
+                        text-align: center;
+                        margin-bottom: $ct-mb;
+                        .client-photo{
+                            border-radius: 100%;
+                            width: 20%;
+                        }
+                    }
+                }
+                .client-feedback{
+                    text-align: center;
+                    .text{
+                        @include text($dark-gblue);
+                    }
+                    .name{
+                        font-family: $font-fraunces;
+                        font-weight: $weight-h;
+                        font-size: $font-n;
+                        margin-bottom: .5rem;
+                    }
+                    .job{
+                        font-family: $font-barlow;
+                        font-weight: $weight-xl;
+                        font-size: $font-xs;
+                        color: $gray-blue;
+                    }
+                }
+            }
+        }
+    }
+    .projects{
+        height: 100%;
+        .projects-container{
+            display: flex;
+            flex-wrap: wrap;
+            .project{
+                flex: 50%;
+                img{
+                    width: 100%;
+                    display: block;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .footer{
+        background-color: $footer-bg;
+        .container{
+            padding: 3rem 1rem 4rem 1rem;
+            .logo-container{
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            .links-container{
+                margin-bottom: 4rem;
+                .links{
+                    list-style: none;
+                    @include flex(center,space-evenly);
+                    li{
+                        .link{
+                            text-decoration: none;
+                            color: $footer-text;
+                            font-family: $font-barlow;
+                            font-weight: $weight-l;
+                        }
+                    }
+                }
+            }
+            .social-container{
+                .social-links{
+                    margin: 0 auto;
+                    width: 50%;
+                    list-style: none;
+                    @include flex(center,space-between);
+                    li{
+                        width: 100%;
+                        .social-link{
+                            .facebook-social-icon{
+                                background: url('../images/icon-facebook.svg') no-repeat center;
+                                @include socialLink();
+                            }
+                            .instagram-social-icon{
+                                background: url('../images/icon-instagram.svg') no-repeat center;
+                                @include socialLink();
+                            }
+                            .twitter-social-icon{
+                                background: url('../images/icon-twitter.svg') no-repeat center;
+                                @include socialLink();
+                            }
+                            .pinterest-social-icon{
+                                background: url('../images/icon-pinterest.svg') no-repeat center;
+                                @include socialLink();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
