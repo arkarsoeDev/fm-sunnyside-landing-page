@@ -26,8 +26,58 @@ img {
         padding: 2rem;
         .nav{
             .nav-links{
+                @include flex(center,center);
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                list-style: none;
+                top: 120%;
+                left: 2rem;
+                right: 2rem;
+                background-color: $c-white;
+                padding: 2rem;
+                li{
+                    height: 10vh;
+                    width: 100%;
+                    @include flex();
+                    .nav-link{
+                        display: inline;
+                        text-decoration: none;
+                        text-align: center;
+                        @include text($dark-gblue);
+                        margin: 0;
+                        width: fit-content;
+                        width: 50%;
+                        padding: .5rem 1rem;
+                        transition: .3s cubic-bezier(0.75, 0.24, 0.55, 1.56);
+                        border-radius: 20px;
+                        &:hover {
+                            color: $menu-clr;
+                        }
+                        &.active{
+                            font-size: $font-n;
+                            font-family: $font-fraunces;
+                            background-color: $menu-clr;
+                            font-weight: $weight-h;
+                            color: $dark-gblue;
+                        }
+                    }
+                }
+                &::after{
+                    content: "";
+                    border-top: 15px solid transparent;
+                    border-right: 15px solid $c-white;
+                    border-bottom: 15px solid $c-white;
+                    border-left: 15px solid transparent;
+                    top: -29px;
+                    right: 0;
+                    position: absolute;
+                }
+                &.show{
+                    display: flex;
+                }
             }
+
         }
     }
     .home {
@@ -162,6 +212,10 @@ img {
                             color: $footer-text;
                             font-family: $font-barlow;
                             font-weight: $weight-l;
+                            transition: .3s;
+                            &:hover{
+                                color: $c-white;
+                            }
                         }
                     }
                 }
@@ -175,20 +229,27 @@ img {
                     li{
                         width: 100%;
                         .social-link{
+                            .icon-color{
+                                background-color: $footer-icon;
+                                transition: .3s;
+                                &:hover {
+                                    background-color: $c-white;
+                                }
+                            }
                             .facebook-social-icon{
-                                background: url('../images/icon-facebook.svg') no-repeat center;
+                                mask: url('../images/icon-facebook.svg') no-repeat center;
                                 @include socialLink();
                             }
                             .instagram-social-icon{
-                                background: url('../images/icon-instagram.svg') no-repeat center;
+                                mask: url('../images/icon-instagram.svg') no-repeat center;
                                 @include socialLink();
                             }
                             .twitter-social-icon{
-                                background: url('../images/icon-twitter.svg') no-repeat center;
+                                mask: url('../images/icon-twitter.svg') no-repeat center;
                                 @include socialLink();
                             }
                             .pinterest-social-icon{
-                                background: url('../images/icon-pinterest.svg') no-repeat center;
+                                mask: url('../images/icon-pinterest.svg') no-repeat center;
                                 @include socialLink();
                             }
                         }
