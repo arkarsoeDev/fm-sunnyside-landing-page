@@ -108,32 +108,42 @@ img {
     .services{
         @include content($primary);
     }
-    .s-graphic{
-        .bg-content{
-            .background{
-                background: url('../images/mobile/image-graphic-design.jpg') no-repeat center/cover;
-                @include flex();
-                height: 120vh;
-                align-items: flex-end;
-                @include bgContentText($graphic-text);
+    .s-container{
+        @include flex(center,center);
+        flex-direction: column;
+        .s-graphic{
+            .bg-content{
+                .background{
+                    position: relative;
+                    .mobile-content-img{
+                        display: block;
+                    }
+                    .desktop-content-img{
+                        display: none;
+                    }
+                    @include bgContentText($graphic-text);
+                }
             }
         }
-    }
-    .s-photograph{
-        .bg-content{
-            .background{
-                background: url('../images/mobile/image-photography.jpg') no-repeat center/cover;
-                @include flex();
-                height: 120vh;
-                align-items: flex-end;
-                @include bgContentText($photo-text);
+        .s-photograph{
+            .bg-content{
+                .background{
+                    position: relative;
+                    .mobile-content-img{
+                        display: block;
+                    }
+                    .desktop-content-img{
+                        display: none;
+                    }
+                    @include bgContentText($photo-text);
+                }
             }
         }
     }
     .testimonial{
         background-color: $c-white;
         .container{
-            margin: 4rem 2rem 0 2rem;
+            padding: 4rem 2rem;
             .title {
                 text-align: center;
                 margin-bottom: 4rem;
@@ -145,6 +155,8 @@ img {
                 font-size: $font-s;
             }
             .component-container{
+                @include flex();
+                flex-direction: column;
                 .client-component{
                     margin-bottom: 4rem;
                     padding: 0 .8rem;
@@ -153,28 +165,33 @@ img {
                         margin-bottom: $ct-mb;
                         .client-photo{
                             border-radius: 100%;
-                            width: 20%;
+                            width: auto;
+                            height: 100px;
                         }
                     }
+                    .client-feedback{
+                        text-align: center;
+                        .text{
+                            @include text($dark-gblue);
+                        }
+                        .name{
+                            font-family: $font-fraunces;
+                            font-weight: $weight-h;
+                            font-size: $font-n;
+                            margin-bottom: .5rem;
+                        }
+                        .job{
+                            font-family: $font-barlow;
+                            font-weight: $weight-xl;
+                            font-size: $font-xs;
+                            color: $gray-blue;
+                        }
+                    }
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
                 }
-                .client-feedback{
-                    text-align: center;
-                    .text{
-                        @include text($dark-gblue);
-                    }
-                    .name{
-                        font-family: $font-fraunces;
-                        font-weight: $weight-h;
-                        font-size: $font-n;
-                        margin-bottom: .5rem;
-                    }
-                    .job{
-                        font-family: $font-barlow;
-                        font-weight: $weight-xl;
-                        font-size: $font-xs;
-                        color: $gray-blue;
-                    }
-                }
+
             }
         }
     }
@@ -185,10 +202,11 @@ img {
             flex-wrap: wrap;
             .project{
                 flex: 50%;
-                img{
-                    width: 100%;
+                .mobile-project-img{
                     display: block;
-                    height: auto;
+                }
+                .desktop-project-img{
+                    display: none;
                 }
             }
         }
@@ -259,3 +277,5 @@ img {
         }
     }
 }
+
+@import "res1440";

@@ -12,6 +12,7 @@
             @include flex();
             text-align: center;
             padding: 3rem 2.5rem;
+            background-color: $text-bg;
             .content-text {
                 .title{
                     font-family: $font-fraunces;
@@ -30,6 +31,7 @@
                     text-decoration: none;
                     position: relative;
                     background: transparent;
+                    z-index: 1;
                     &::after{
                         content: "";
                         position: absolute;
@@ -52,8 +54,36 @@
     }
 }
 
+@mixin desktopContent($flexDirection) {
+    .content{
+        flex-direction: $flexDirection;
+        align-items: stretch;
+        .content-img {
+            width: 50%;
+        }
+        .content-text-container{
+            @include flex();
+            text-align: left;
+            .content-text{
+                padding: 5rem;
+                .title {
+                    font-size: 3rem;
+                }
+                .text {
+                    font-size: $font-n;
+                }
+                .link{
+                    font-size: 20px;
+                }
+            }
+        }
+    } 
+}
+
 @mixin bgContentText($textClr) {
     .content-text{
+        position: absolute;
+        bottom: 0;
         text-align: center;
         padding: 1.5rem 1.2rem;
         color: $textClr;
@@ -67,7 +97,7 @@
             font-family: $font-barlow;
             font-size: $font-s;
             font-weight: $weight-l;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             line-height: 1.5;
         }
     }

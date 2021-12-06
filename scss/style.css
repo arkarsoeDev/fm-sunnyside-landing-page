@@ -178,6 +178,7 @@ img {
           justify-content: center;
   text-align: center;
   padding: 3rem 2.5rem;
+  background-color: #fffcfa;
 }
 
 .container .about-us .content .content-text-container .content-text .title {
@@ -204,6 +205,7 @@ img {
   text-decoration: none;
   position: relative;
   background: transparent;
+  z-index: 1;
 }
 
 .container .about-us .content .content-text-container .content-text .link::after {
@@ -253,6 +255,7 @@ img {
           justify-content: center;
   text-align: center;
   padding: 3rem 2.5rem;
+  background-color: #fffcfa;
 }
 
 .container .services .content .content-text-container .content-text .title {
@@ -279,6 +282,7 @@ img {
   text-decoration: none;
   position: relative;
   background: transparent;
+  z-index: 1;
 }
 
 .container .services .content .content-text-container .content-text .link::after {
@@ -300,8 +304,7 @@ img {
   opacity: 1;
 }
 
-.container .s-graphic .bg-content .background {
-  background: url("../images/mobile/image-graphic-design.jpg") no-repeat center/cover;
+.container .s-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -311,68 +314,79 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 120vh;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.container .s-graphic .bg-content .background .content-text {
+.container .s-container .s-graphic .bg-content .background {
+  position: relative;
+}
+
+.container .s-container .s-graphic .bg-content .background .mobile-content-img {
+  display: block;
+}
+
+.container .s-container .s-graphic .bg-content .background .desktop-content-img {
+  display: none;
+}
+
+.container .s-container .s-graphic .bg-content .background .content-text {
+  position: absolute;
+  bottom: 0;
   text-align: center;
   padding: 1.5rem 1.2rem;
   color: #25564b;
 }
 
-.container .s-graphic .bg-content .background .content-text .title {
+.container .s-container .s-graphic .bg-content .background .content-text .title {
   font-family: "Fraunces", serif;
   margin-bottom: 2rem;
   font-weight: 900;
   font-size: 28px;
 }
 
-.container .s-graphic .bg-content .background .content-text .text {
+.container .s-container .s-graphic .bg-content .background .content-text .text {
   font-family: "Barlow", sans-serif;
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   line-height: 1.5;
 }
 
-.container .s-photograph .bg-content .background {
-  background: url("../images/mobile/image-photography.jpg") no-repeat center/cover;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 120vh;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+.container .s-container .s-photograph .bg-content .background {
+  position: relative;
 }
 
-.container .s-photograph .bg-content .background .content-text {
+.container .s-container .s-photograph .bg-content .background .mobile-content-img {
+  display: block;
+}
+
+.container .s-container .s-photograph .bg-content .background .desktop-content-img {
+  display: none;
+}
+
+.container .s-container .s-photograph .bg-content .background .content-text {
+  position: absolute;
+  bottom: 0;
   text-align: center;
   padding: 1.5rem 1.2rem;
   color: #19536b;
 }
 
-.container .s-photograph .bg-content .background .content-text .title {
+.container .s-container .s-photograph .bg-content .background .content-text .title {
   font-family: "Fraunces", serif;
   margin-bottom: 2rem;
   font-weight: 900;
   font-size: 28px;
 }
 
-.container .s-photograph .bg-content .background .content-text .text {
+.container .s-container .s-photograph .bg-content .background .content-text .text {
   font-family: "Barlow", sans-serif;
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   line-height: 1.5;
 }
 
@@ -381,7 +395,7 @@ img {
 }
 
 .container .testimonial .container {
-  margin: 4rem 2rem 0 2rem;
+  padding: 4rem 2rem;
 }
 
 .container .testimonial .container .title {
@@ -393,6 +407,22 @@ img {
   color: #a7abae;
   letter-spacing: 2.5px;
   font-size: 16px;
+}
+
+.container .testimonial .container .component-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container .testimonial .container .component-container .client-component {
@@ -407,14 +437,15 @@ img {
 
 .container .testimonial .container .component-container .client-component .client-photo-container .client-photo {
   border-radius: 100%;
-  width: 20%;
+  width: auto;
+  height: 100px;
 }
 
-.container .testimonial .container .component-container .client-feedback {
+.container .testimonial .container .component-container .client-component .client-feedback {
   text-align: center;
 }
 
-.container .testimonial .container .component-container .client-feedback .text {
+.container .testimonial .container .component-container .client-component .client-feedback .text {
   font-family: "Barlow", sans-serif;
   color: #5a636c;
   margin-bottom: 1.5rem;
@@ -423,18 +454,22 @@ img {
   line-height: 1.5;
 }
 
-.container .testimonial .container .component-container .client-feedback .name {
+.container .testimonial .container .component-container .client-component .client-feedback .name {
   font-family: "Fraunces", serif;
   font-weight: 900;
   font-size: 18px;
   margin-bottom: .5rem;
 }
 
-.container .testimonial .container .component-container .client-feedback .job {
+.container .testimonial .container .component-container .client-component .client-feedback .job {
   font-family: "Barlow", sans-serif;
   font-weight: 500;
   font-size: 14px;
   color: #a7abae;
+}
+
+.container .testimonial .container .component-container .client-component:last-child {
+  margin-bottom: 0;
 }
 
 .container .projects {
@@ -455,10 +490,12 @@ img {
           flex: 50%;
 }
 
-.container .projects .projects-container .project img {
-  width: 100%;
+.container .projects .projects-container .project .mobile-project-img {
   display: block;
-  height: auto;
+}
+
+.container .projects .projects-container .project .desktop-project-img {
+  display: none;
 }
 
 .container .footer {
@@ -563,5 +600,255 @@ img {
   width: 100%;
   height: 20px;
   display: inline-block;
+}
+
+@media only screen and (min-width: 426px) {
+  .container .header .nav .hamburger-container {
+    display: none;
+  }
+  .container .header .nav .nav-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: initial;
+    background-color: transparent;
+    padding: 0;
+  }
+  .container .header .nav .nav-links li {
+    width: 30%;
+  }
+  .container .header .nav .nav-links li .nav-link {
+    color: white;
+    margin: 0 auto;
+    width: 8vw;
+    cursor: pointer;
+  }
+  .container .header .nav .nav-links li .nav-link.active {
+    background-color: white;
+    color: #23303e;
+  }
+  .container .header .nav .nav-links::after {
+    content: none;
+  }
+  .container .home {
+    background: url("../images/desktop/image-header.jpg") no-repeat center/cover;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .container .home .content {
+    margin-top: 12rem;
+  }
+  .container .home .content .title {
+    font-size: 40px;
+    margin-bottom: 5rem;
+    letter-spacing: 8px;
+  }
+  .container .about-us .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .container .about-us .content .content-img {
+    width: 50%;
+  }
+  .container .about-us .content .content-text-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: left;
+  }
+  .container .about-us .content .content-text-container .content-text {
+    padding: 5rem;
+  }
+  .container .about-us .content .content-text-container .content-text .title {
+    font-size: 3rem;
+  }
+  .container .about-us .content .content-text-container .content-text .text {
+    font-size: 18px;
+  }
+  .container .about-us .content .content-text-container .content-text .link {
+    font-size: 20px;
+  }
+  .container .services .content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .container .services .content .content-img {
+    width: 50%;
+  }
+  .container .services .content .content-text-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: left;
+  }
+  .container .services .content .content-text-container .content-text {
+    padding: 5rem;
+  }
+  .container .services .content .content-text-container .content-text .title {
+    font-size: 3rem;
+  }
+  .container .services .content .content-text-container .content-text .text {
+    font-size: 18px;
+  }
+  .container .services .content .content-text-container .content-text .link {
+    font-size: 20px;
+  }
+  .container .s-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .container .s-container .s-graphic .bg-content .background {
+    width: 100%;
+  }
+  .container .s-container .s-graphic .bg-content .background .mobile-content-img {
+    display: none;
+  }
+  .container .s-container .s-graphic .bg-content .background .desktop-content-img {
+    display: block;
+  }
+  .container .s-container .s-graphic .bg-content .background .content-text {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 1.5rem 1.2rem;
+    color: #25564b;
+  }
+  .container .s-container .s-graphic .bg-content .background .content-text .title {
+    font-family: "Fraunces", serif;
+    margin-bottom: 2rem;
+    font-weight: 900;
+    font-size: 28px;
+  }
+  .container .s-container .s-graphic .bg-content .background .content-text .text {
+    font-family: "Barlow", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+  .container .s-container .s-graphic .bg-content .background .content-text {
+    padding: 1.5rem 11rem;
+    top: 50%;
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+  .container .s-container .s-photograph .bg-content .background {
+    width: 100%;
+  }
+  .container .s-container .s-photograph .bg-content .background .mobile-content-img {
+    display: none;
+  }
+  .container .s-container .s-photograph .bg-content .background .desktop-content-img {
+    display: block;
+  }
+  .container .s-container .s-photograph .bg-content .background .content-text {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 1.5rem 1.2rem;
+    color: #19536b;
+  }
+  .container .s-container .s-photograph .bg-content .background .content-text .title {
+    font-family: "Fraunces", serif;
+    margin-bottom: 2rem;
+    font-weight: 900;
+    font-size: 28px;
+  }
+  .container .s-container .s-photograph .bg-content .background .content-text .text {
+    font-family: "Barlow", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+  .container .s-container .s-photograph .bg-content .background .content-text {
+    padding: 1.5rem 11rem;
+    top: 50%;
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+  .container .testimonial {
+    background-color: #fffcfa;
+  }
+  .container .testimonial .container {
+    padding: 9rem 3rem;
+  }
+  .container .testimonial .container .title {
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin-bottom: 6rem;
+  }
+  .container .testimonial .container .component-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .container .testimonial .container .component-container .client-component {
+    margin-bottom: 0;
+    padding: 0 1.5rem;
+  }
+  .container .testimonial .container .component-container .client-component .client-photo-container {
+    margin-bottom: 3.5rem;
+  }
+  .container .testimonial .container .component-container .client-component .client-feedback .text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.7;
+    margin-bottom: 3.5rem;
+  }
+  .container .projects .projects-container {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .container .projects .projects-container .project .mobile-project-img {
+    display: none;
+  }
+  .container .projects .projects-container .project .desktop-project-img {
+    display: block;
+  }
+  .container .footer .container {
+    width: 30%;
+    margin: 0 auto;
+    padding: 4rem 0;
+  }
+  .container .footer .container .logo-container .logo {
+    width: 50%;
+  }
+  .container .footer .container .links-container {
+    margin-bottom: 5rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

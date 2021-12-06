@@ -1,3 +1,152 @@
 @media only screen and (min-width: 426px) {
-    
+    .container{
+        .header{
+            .nav{
+                .hamburger-container{
+                    display: none;
+                }
+                .nav-links{
+                    display: flex;
+                    flex-direction: row;
+                    position: initial;
+                    background-color: transparent;
+                    padding: 0;
+                    li {
+                        width: 30%;
+                        .nav-link{
+                            color: $c-white;
+                            margin: 0 auto;
+                            width: 8vw;
+                            cursor: pointer;
+                            &.active {
+                                background-color: $c-white;
+                                color: $dark-dblue;
+                            }
+                        }
+                    }
+                    &::after{
+                        content: none;
+                    }
+                }
+            }
+        }
+        .home {
+            background: url('../images/desktop/image-header.jpg') no-repeat center/cover;
+            align-items: start;
+            .content{
+                margin-top: 12rem;
+                .title{
+                    font-size: $font-xl;
+                    margin-bottom: 5rem;
+                    letter-spacing: 8px;
+                }
+            }
+        }
+        .about-us{
+            @include desktopContent(row-reverse);
+        }
+        .services {
+            @include desktopContent(row);
+        }
+        .s-container{
+            flex-direction: row;
+            .s-graphic{
+                .bg-content{
+                    .background{
+                        width: 100%;
+                        .mobile-content-img{
+                            display: none;
+                        }
+                        .desktop-content-img{
+                            display: block;
+                        }
+                        @include bgContentText($graphic-text);
+                        .content-text{
+                            padding: 1.5rem 11rem;
+                            top: 50%;
+                            transform: translateY(20%);
+                        }
+                    }
+                }
+            }
+            .s-photograph{
+                .bg-content{
+                    .background{
+                        width: 100%;
+                        .mobile-content-img{
+                            display: none;
+                        }
+                        .desktop-content-img{
+                            display: block;
+                        }
+                        @include bgContentText($photo-text);
+                        .content-text {
+                            padding: 1.5rem 11rem;
+                            top: 50%;
+                            transform: translateY(20%);
+                        }
+                    }
+                }
+            }
+        }
+        .testimonial{
+            background-color: $text-bg;
+            .container{
+                padding: 9rem 3rem;
+                .title{
+                    font-size: 20px;
+                    letter-spacing: 5px;
+                    margin-bottom: 6rem;
+                }
+                .component-container{
+                    flex-direction: row;
+                    align-items: flex-start;
+                    .client-component{
+                        margin-bottom: 0;
+                        padding: 0 1.5rem;
+                        .client-photo-container{
+                            margin-bottom: 3.5rem;
+                        }
+                        .client-feedback{
+                            .text{
+                                font-size: $font-n;
+                                font-weight: $weight-l;
+                                line-height: 1.7;
+                                margin-bottom: 3.5rem;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .projects{
+            .projects-container{
+                flex-wrap: nowrap;
+                .project{
+                    .mobile-project-img{
+                        display: none;
+                    }
+                    .desktop-project-img{
+                        display: block;
+                    }
+                }
+            }
+        }
+        .footer{
+            .container{
+                width: 30%;
+                margin: 0 auto;
+                padding: 4rem 0;
+                .logo-container{
+                    .logo {
+                        width: 50%;
+                    }
+                }
+                .links-container{
+                    margin-bottom: 5rem;
+                }
+            }
+        }
+    }
 }
