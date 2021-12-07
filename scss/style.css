@@ -676,6 +676,7 @@ img {
         -ms-flex-pack: center;
             justify-content: center;
     text-align: left;
+    width: 50%;
   }
   .container .about-us .content .content-text-container .content-text {
     padding: 5rem;
@@ -712,6 +713,7 @@ img {
         -ms-flex-pack: center;
             justify-content: center;
     text-align: left;
+    width: 50%;
   }
   .container .services .content .content-text-container .content-text {
     padding: 5rem;

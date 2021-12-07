@@ -66,6 +66,7 @@
         .content-text-container{
             @include flex();
             text-align: left;
+            width: 50%;
             .content-text{
                 padding: 5rem;
                 .title {
