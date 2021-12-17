@@ -24,6 +24,7 @@ img {
         top: 0;
         width: 100%;
         padding: 2rem;
+        z-index: 5;
         .nav{
             .nav-links{
                 @include flex(center,center);

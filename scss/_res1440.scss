@@ -1,6 +1,10 @@
 @media only screen and (min-width: 426px) {
     .container{
         .header{
+            &.active{
+                position: fixed;
+                background-color: rgba(61, 215, 235, 0.9);
+            }
             .nav{
                 .hamburger-container{
                     display: none;

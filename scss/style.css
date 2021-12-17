@@ -29,6 +29,7 @@ img {
   top: 0;
   width: 100%;
   padding: 2rem;
+  z-index: 5;
 }
 
 .container .header .nav .nav-links {
@@ -608,6 +609,10 @@ img {
 }
 
 @media only screen and (min-width: 426px) {
+  .container .header.active {
+    position: fixed;
+    background-color: rgba(61, 215, 235, 0.9);
+  }
   .container .header .nav .hamburger-container {
     display: none;
   }
