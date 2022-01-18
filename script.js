@@ -13,7 +13,7 @@ navArr.forEach(el => {
         removeActive();
         setTimeout(function() {
             navLinks.classList.toggle('show');
-        },500)
+        },1000)
         this.classList.add('active');
     })
 })

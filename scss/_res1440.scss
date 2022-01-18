@@ -18,12 +18,14 @@
                     padding: 0;
                     li {
                         width: 100%;
+                        display: inline-block;
+                        line-height: 70.5px;
                         .nav-link{
                             color: $c-white;
                             margin: 0 auto;
                             width: 8vw;
                             cursor: pointer;
-                            &.active {
+                            &.active { 
                                 background-color: $c-white;
                                 color: $dark-dblue;
                             }

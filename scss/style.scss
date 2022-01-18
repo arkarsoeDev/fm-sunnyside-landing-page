@@ -25,6 +25,7 @@ img {
         width: 100%;
         padding: 2rem;
         z-index: 5;
+        align-items: center;
         .nav{
             .nav-links{
                 @include flex(center,center);
@@ -40,11 +41,11 @@ img {
                 li{
                     height: 10vh;
                     width: 100%;
-                    @include flex();
+                    text-align: center;
+                    line-height: 53px;
                     .nav-link{
                         display: inline;
                         text-decoration: none;
-                        text-align: center;
                         @include text($dark-gblue);
                         margin: 0;
                         width: fit-content;
