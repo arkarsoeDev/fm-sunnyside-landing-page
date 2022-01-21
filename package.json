@@ -1,0 +1,24 @@
+{
+  "name": "sunnyside-agency-landing-page-main",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Sunnyside agency landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass" : "sass --watch app/scss/style.scss:dist/css/style.css",
+    "minicss" : "sass dist/css/style.css:dist/css/style.min.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkarsoeDev/fm-sunnyside-landing-page.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arkarsoeDev/fm-sunnyside-landing-page/issues"
+  },
+  "homepage": "https://github.com/arkarsoeDev/fm-sunnyside-landing-page#readme",
+  "dependencies": {
+    "sass": "^1.49.0"
+  }
+}

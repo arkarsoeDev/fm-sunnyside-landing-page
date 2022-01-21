@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+@mixin flex($ai:center,$jc:center) {
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+}
+
+@mixin text($color) {
+    font-family: $font-barlow;
+    color: $color;
+    margin-bottom: 1.5rem;
+    font-weight: $weight-xl;
+    font-size: $font-s;
+    line-height: 1.5;
+}

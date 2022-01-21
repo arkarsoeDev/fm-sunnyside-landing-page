@@ -1,0 +1,16 @@
+@use '../util/' as *;
+.about-us {
+    .custom-content {
+        @include breakpoint-up(medium) {
+            flex-direction: row-reverse;
+            align-items: stretch;
+        }
+    }
+    .content-text{
+        .link {
+            &::after{
+                background-color: $primary-y;
+            }
+        }
+    }
+}

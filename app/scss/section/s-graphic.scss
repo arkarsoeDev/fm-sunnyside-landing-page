@@ -1,0 +1,34 @@
+@use '../util/' as *;
+.s-graphic {
+    .background{
+        position: relative;
+        overflow: hidden;
+        
+        @include breakpoint-up(medium) {
+            width: 100%;
+        }
+        .mobile-content-img{
+            display: block;
+
+            @include breakpoint-up(medium) {
+                display: none;
+            }
+        }
+        .desktop-content-img{
+            display: none;
+
+            @include breakpoint-up(medium) {
+                display: block;
+            }
+        }
+        .content-text {
+            color: $graphic-text;
+
+            @include breakpoint-up(medium) {
+                padding: 1.5rem 11rem;
+                top: 50%;
+                transform: translateY(20%);
+            }
+        }
+    }
+}

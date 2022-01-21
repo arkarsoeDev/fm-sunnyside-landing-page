@@ -1,0 +1,74 @@
+@use "../util/" as *;
+.custom-content{
+    @include flex();
+    flex-direction: column;
+    .content-img {
+        @include breakpoint-up(medium) {
+            width: 50%;
+        }
+    }
+    .content-text-container{
+        @include flex();
+        text-align: center;
+        padding: 3rem 2.5rem;
+        background-color: $text-bg;
+
+        @include breakpoint-up(medium) {
+            text-align: left;
+            width: 50%;
+        }
+        .content-text {
+            @include breakpoint-up(medium) {
+                padding: 5rem;
+            }
+            .title{
+                font-family: $font-fraunces;
+                margin-bottom: 1.5rem;
+                font-weight: $weight-h;
+                font-size: 1.8rem;
+
+                @include breakpoint-up(medium) {
+                    font-size: 3rem;
+                }
+            }
+            .text {
+                @include text($gray-blue);
+
+                @include breakpoint-up(medium) {
+                    font-size: $font-n;
+                }
+            }
+            .link{
+                text-transform: uppercase;
+                font-family: $font-fraunces;
+                display: inline-block;
+                color: $dark-dblue;
+                font-weight: $weight-h;
+                font-size: $font-s;
+                text-decoration: none;
+                position: relative;
+                background: transparent;
+                z-index: 1;
+
+                @include breakpoint-up(medium) {
+                    font-size: 20px;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    height: .5rem;
+                    width: 110%;
+                    left: -5%;
+                    z-index: -1;
+                    top: 60%;
+                    border-radius: 5px;
+                    opacity: .5;
+                    transition: .5s;
+                }
+                &:hover::after{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

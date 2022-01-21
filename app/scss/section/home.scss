@@ -1,0 +1,37 @@
+@use '../util' as *;
+.home {
+    height: 100vh;
+    width: auto;
+    background: url('/images/mobile/image-header.jpg') no-repeat center/cover;
+    padding: 1rem;
+    color: $c-white;
+    text-transform: uppercase;
+    font-family: $font-fraunces;
+    @include flex();
+
+    @include breakpoint-up(medium) {
+        background: url('/images/desktop/image-header.jpg') no-repeat center/cover;
+        align-items: start;
+    }
+    .content {
+        @include breakpoint-up(medium) {
+            margin-top: 12rem;
+        }
+        .title{
+            text-align: center;
+            font-size: $font-l;
+            font-weight: $weight-h;
+            letter-spacing: 5px;
+            margin-bottom: 2rem;
+
+            @include breakpoint-up(medium) {
+                font-size: $font-xl;
+                margin-bottom: 5rem;
+                letter-spacing: 8px;
+            }
+        }
+        .arrow-down-container{
+            text-align: center;
+        }
+    }
+}

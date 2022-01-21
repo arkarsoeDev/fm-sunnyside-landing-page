@@ -1,0 +1,20 @@
+@use '../util' as *;
+
+.header{
+    @include flex(center,space-between);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2rem;
+    z-index: 5;
+    align-items: center;
+    @include breakpoint-up(medium) {
+        transition: .5s;
+    }
+    &.active{
+        @include breakpoint-up(medium) {
+            position: fixed;
+            background-color: rgba(61, 215, 235, 0.9);
+        }
+    }
+}

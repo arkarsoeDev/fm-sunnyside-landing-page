@@ -1,0 +1,29 @@
+@use '../util/' as *;
+.projects{
+    height: 100%;
+    .projects-container{
+        display: flex;
+        flex-wrap: wrap;
+
+        @include breakpoint-up(medium) {
+            flex-wrap: nowrap;
+        }
+    }
+    .project{
+        flex: 50%;
+        .mobile-project-img{
+            display: block;
+
+            @include breakpoint-up(medium) {
+                display: none;
+            }
+        }
+        .desktop-project-img{
+            display: none;
+
+            @include breakpoint-up(medium) {
+                display: block;
+            }
+        }
+    }
+}
